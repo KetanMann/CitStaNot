@@ -9,13 +9,12 @@ def get_config():
     config.num_channels = 3
 
     # Model configurations
-    config.model = 'ddpm'
-    config.model_params = {
-        'channels': 128,
-        'num_res_blocks': 2,
-        'attention_resolutions': [16, 8],
-        'dropout': 0.1
-    }
+    config.model = config_dict.ConfigDict()
+    config.model.name = 'ddpm'
+    config.model.channels = 128
+    config.model.num_res_blocks = 2
+    config.model.attention_resolutions = [16, 8]
+    config.model.dropout = 0.1
 
     # Training configurations
     config.train = config_dict.ConfigDict()
